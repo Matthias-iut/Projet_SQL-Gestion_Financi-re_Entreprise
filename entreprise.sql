@@ -329,7 +329,7 @@ FROM (
             from transaction WHERE (annee>=2021) AND (annee<=2022)
             ) as bt
     WHERE bt.bilan<0
-    ) as fdp ON ( (recette.annee, FLOOR((recette.mois+2)/3))= fdp.trimestre)) as rm
+    ) as gf ON ( (recette.annee, FLOOR((recette.mois+2)/3))= fdp.trimestre)) as rm
 WHERE rm.montant-rm.moyenne<0;
 
 
